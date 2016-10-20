@@ -1,18 +1,37 @@
+html{
+	font-size: 62.5%; /*1rem=10px*/
+}
 body{
 	background-color: #2B90E7;
+	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+header{
+	overflow: auto;
+	padding: 20px 0;
+	margin: 0 auto;
+	width: 70%;
+}
+#title{
+	font-size: 2.5rem;
+	color: #FFF;
+	float: left;
 }
 #link{
-	padding: 0 10px;
-	margin-top: 10px;
+	float: right;
 }
 #link li{
 	display: inline-block;
-	padding: 5px 10px;
+	margin-right: 20px;
 }
 #link li a{
 	text-decoration: none;
 	color: #EFEFEF;
-	font-size: 1.2rem;
-	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+	font-size: 2.5rem;   /*25px*/
+}
+#link li a :hover{
 	
+}
+.logo canvas{
+	display: block;
+	margin: 0 auto;
 }
