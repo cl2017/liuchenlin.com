@@ -9,7 +9,7 @@ header{
 	overflow: auto;
 	padding: 20px 0;
 	margin: 0 auto;
-	width: 70%;
+	width: 80%;
 }
 #title{
 	font-size: 2.5rem;
@@ -28,10 +28,46 @@ header{
 	color: #EFEFEF;
 	font-size: 2.5rem;   /*25px*/
 }
-#link li a :hover{
-	
-}
+
 .logo canvas{
 	display: block;
 	margin: 0 auto;
+}
+
+@media only screen and (max-width: 768px){
+	header{
+		width: 100%;
+	}
+	#title{
+		margin-left: 30px;
+	}
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px){
+	#link li a,#title{
+		font-size:  1.8rem;
+	}
+}
+
+@media only screen and (max-width: 480px){
+	#link li a,#title{
+		font-size:  1.6rem;
+	}
+	header{
+		padding-top: 10px;
+	}
+	#title{
+		display: none;
+	}
+	#link{
+		float: none;
+	}
+	#link li{
+		margin: 10px 0 0 10px;
+		display: inline-block;
+	}
+	canvas{
+		height: 300px;
+		width: 300px;
+	}
 }
