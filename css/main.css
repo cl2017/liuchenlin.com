@@ -9,10 +9,11 @@ header{
 	overflow: auto;
 	padding: 20px 0;
 	margin: 0 auto;
-	width: 80%;
+	width: 90%;
 }
 #index{
 	float: left;
+	margin-left: 80px;
 }
 #link{
 	float: right;
@@ -29,10 +30,17 @@ header{
 #link li a:hover{
 	color: #FFF;
 }
-
+.logo{
+	overflow: hidden;
+}
 .logo canvas{
 	display: block;
 	margin: 0 auto;
+	position: relative;
+	top: 50px;
+	left: 90px;
+	width: 480px;
+	height: 480px;
 }
 
 @media only screen and (max-width: 768px){
@@ -64,7 +72,12 @@ header{
 	#link li{
 		margin: 0 5px;
 	}
-	canvas{
+	.logo canvas{
+		display: block;
+		margin: 0 auto;
+		position: relative;
+		top: 50px;
+		left: 60px;
 		height: 300px;
 		width: 300px;
 	}
