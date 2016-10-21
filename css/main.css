@@ -11,9 +11,7 @@ header{
 	margin: 0 auto;
 	width: 80%;
 }
-#title{
-	font-size: 2.5rem;
-	color: #FFF;
+#index{
 	float: left;
 }
 #link{
@@ -23,10 +21,13 @@ header{
 	display: inline-block;
 	margin-right: 20px;
 }
-#link li a{
+#link li a,#index a{
 	text-decoration: none;
 	color: #EFEFEF;
 	font-size: 2.5rem;   /*25px*/
+}
+#link li a:hover{
+	color: #FFF;
 }
 
 .logo canvas{
@@ -38,33 +39,30 @@ header{
 	header{
 		width: 100%;
 	}
-	#title{
-		margin-left: 30px;
-	}
-}
-
-@media only screen and (min-width: 481px) and (max-width: 768px){
-	#link li a,#title{
+	#link li a,#index a{
 		font-size:  1.8rem;
 	}
 }
 
+@media only screen and (min-width: 481px) and (max-width: 768px){
+	#index{
+		margin-left: 30px;
+	}
+}
+
 @media only screen and (max-width: 480px){
-	#link li a,#title{
-		font-size:  1.6rem;
-	}
 	header{
-		padding-top: 10px;
+		text-align: center;
 	}
-	#title{
-		display: none;
+	#index{
+		display: none;  /*不显示主页文字*/
 	}
 	#link{
 		float: none;
+		display: inline-block;
 	}
 	#link li{
-		margin: 10px 0 0 10px;
-		display: inline-block;
+		margin: 0 5px;
 	}
 	canvas{
 		height: 300px;
