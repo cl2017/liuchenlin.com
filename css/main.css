@@ -10,6 +10,7 @@ header{
 	padding: 20px 0;
 	margin: 0 auto;
 	width: 90%;
+	color: #FFF;
 }
 #index{
 	float: left;
@@ -42,7 +43,21 @@ header{
 	width: 480px;
 	height: 480px;
 }
-
+.hongbao{
+	clear: both;
+	padding: 20px 0px;
+	text-align: center;
+}
+.hongbao a{
+	margin: 0 auto;
+	text-decoration: none;
+	color: #FFF;
+	font-size: 2rem;
+	background-color: #00C80D;
+	border: 1px solid #00C80D;
+	border-radius: 20px;
+	padding: 5px 10px;
+}
 @media only screen and (max-width: 768px){
 	header{
 		width: 100%;

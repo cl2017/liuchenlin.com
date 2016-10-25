@@ -7,26 +7,42 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="shortcut icon" href="src/logo.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link rel="shortcut icon" href="src/apple.ico">
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?238abaa09a35cf7d17ace4ed01a83943";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+
 </head>
 <body>
 	<header>
-		<div id="index">
+		<div id="index" class="animated bounceInDown">
 			<a href="http://liuchenlin.com">cl's index</a>
 		</div>
-		<div id="link">
+		<div id="link" class="animated bounceInDown">
 			<li><a href="http://blog.liuchenlin.com" target="_blank">Blog</a></li>
 			<li><a href="http://weibo.com/314498010" target="_blank">Weibo</a></li>
 			<li><a href="http://github.com/cl2017" target="_blank">GitHub</a></li>
 			<li><a href="src/wechat.jpg" target="_blank">Wechat</a></li>
 			<li><a href="mailto:me@liuchenlin.com">Email</a></li>
 		</div>
+		<div class="hongbao animated bounceInDown">
+			<a href="hongbao.html">>>支付宝红包<<</a>
+		</div>
 	</header>
-	<div class="logo">
+
+	<div class="logo animated flipInX">
 		<canvas id="canvasOne" width="1000" height="1000">
             Your Brower does not support HTML5 Canvas.
-        </canvas>	
+        </canvas>
     </div>
 	<script src="js/apple.js"></script>
+
 </body>
 </html>
