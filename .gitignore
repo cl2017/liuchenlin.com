@@ -1,2 +1,5 @@
-﻿project/hongbao/小月博客刮刮卡.zip
+﻿*.zip
+*.png
+*.jpg
 document/*
+src/*
