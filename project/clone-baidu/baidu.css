@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.wrap{
+	height: 100%;
+    overflow: hidden;
+    min-width: 810px;
+    min-height: 600px;
+    position: relative;
+}
+
+.title{
+    margin: 19px 0 5px 300px;
+    padding:0 96px 0 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.title a.sp{
+	font-size: 13px;
+	font-family: "宋体";
+	text-decoration: underline;
+	color: #333;
+	line-height: 24px;
+    margin-left: 20px;
+    float: left;
+    text-align: center;
+}
+.title a.bold{
+    font-weight:bold;
+    font-size: 13px;
+    font-family: arial;
+	text-decoration: underline;
+	color: #333;
+	line-height: 24px;
+    margin-left: 20px;
+    float: left;
+    text-align: center;
+}
+
+.title a.more{
+	position: absolute;
+	border:0;
+    line-height:24px;
+    width:60px;
+    background:#38F;
+    color:#fff;
+    font-size: 13px;
+	font-family: "宋体";
+    margin-left: 19px;
+    margin-right: 2px;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+}
+.content{
+    position: relative;
+    margin-top: 70px;
+    margin-bottom: 200px;
+}
+.logo{
+	text-align: center;
+}
+.img{
+	height: 130px;
+	width: 270px;
+}
+.search{
+
+	margin-top: 22px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+	width: 650px;
+	text-align: center;
+}
+.text .anniu{
+    letter-spacing: -0.5em;
+}
+.input{
+	width: 539px;
+	height: 34px;
+	padding: 0px;
+}
+.btn{
+	border: 0;
+	width: 100px;
+	height: 40px;
+	background: #38F;
+	font-size: 15px;
+	color: #fff;
+}
+
+.buttom{
+	width:100%;
+    position:absolute;
+    bottom:23px;
+    overflow:hidden;
+}
+.buttom>.link{
+    text-align:center;
+
+}
+.buttom>.link>a{
+    font-size:12px;
+    font-family:"宋体";
+    text-decoration:underline;
+}
+.copyright{
+    text-align:center;
+}
+
+.copyright p,p>a{
+    font-size:12px;
+    font-family:"宋体";
+    color:#666;
+}

@@ -6,7 +6,7 @@ body{
 	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 header{
-	overflow: auto;
+	overflow: hidden;
 	padding: 20px 0;
 	margin: 0 auto;
 	width: 90%;
@@ -18,10 +18,12 @@ header{
 }
 #link{
 	float: right;
+	overflow: hidden;
 }
 #link li{
 	display: inline-block;
 	margin-right: 20px;
+	height: 30px;
 }
 #link li a,#index a{
 	text-decoration: none;
@@ -43,21 +45,70 @@ header{
 	width: 480px;
 	height: 480px;
 }
-.hongbao{
-	clear: both;
-	padding: 20px 0px;
-	text-align: center;
-}
-.hongbao a{
+
+svg{
+	display: block;
+	width: 240px;
+	height: 240px;
 	margin: 0 auto;
-	text-decoration: none;
-	color: #FFF;
-	font-size: 2rem;
-	background-color: #00C80D;
-	border: 1px solid #00C80D;
-	border-radius: 20px;
-	padding: 5px 10px;
+	margin-top: 130px;
+	padding: 10px;
 }
+path {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill:#2B90E7;
+  stroke:white;
+  stroke-width:15;
+}
+#body{
+  stroke-dasharray: 3985;
+  -webkit-animation: body 3s ease-in-out/*  infinite*/;
+  animation: body 3s ease-in-out  /*infinite*/;
+}
+#left{
+  stroke-dasharray: 1250;
+  -webkit-animation: leftbody 2.5s ease-in-out 3s/*  infinite*/;
+  animation: leftbody 2.5s ease-in-out  3s/*infinite*/;
+  	-webkit-animation-fill-mode:both;
+	animation-fill-mode:both;
+}
+#right{
+  stroke-dasharray: 1250;
+  -webkit-animation: rightbody 2.5s ease-in-out 3s/*  infinite*/;
+  animation: rightbody 2.5s ease-in-out 3s/*infinite*/;
+  	-webkit-animation-fill-mode:both;
+	animation-fill-mode:both;
+}
+
+@-webkit-keyframes body{
+	0%{stroke-dashoffset:3985}
+	100%{stroke-dashoffset:0}
+}
+
+@keyframes body{
+	0%{stroke-dashoffset:3985}
+	100%{stroke-dashoffset:0}
+}
+@-webkit-keyframes leftbody{
+	0%{stroke-dashoffset:1250;visibility:hidden}
+	100%{stroke-dashoffset;visibility:visible}
+}
+
+@keyframes leftbody{
+	0%{stroke-dashoffset:1250;visibility:hidden}
+	100%{stroke-dashoffset:0;visibility:visible}
+}
+@-webkit-keyframes rightbody{
+	0%{stroke-dashoffset:1250;visibility:hidden}
+	100%{stroke-dashoffset:0;visibility:visible}
+}
+
+@keyframes rightbody{
+	0%{stroke-dashoffset:1250;visibility:hidden}
+	100%{stroke-dashoffset:0;visibility:visible}
+}
+
 @media only screen and (max-width: 768px){
 	header{
 		width: 100%;
@@ -95,5 +146,10 @@ header{
 		left: 60px;
 		height: 300px;
 		width: 300px;
+	}
+	svg{
+		margin-top: 80px;
+		width: 180px;
+		height: 180px;
 	}
 }
