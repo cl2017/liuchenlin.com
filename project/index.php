@@ -1,25 +1,24 @@
-<?php 
+<?php  
+	$root="/liuchenlin.com/project/";
+	scan($root);  //从根目录开始
+	function scan($filespath){
+		$filesname=scandir($filespath);  //获取根目录所有文件和文件夹的名字 (数组)
+		foreach ($filesname as $name) {
+			if(is_dir($name)&&$name!="."&&$name!="..") {
+				//如果是文件夹 则进入其目录扫描
+				scan($root.$name."/");
+			}
 
-  $hostdir=dirname(__FILE__);
-
-//获取本文件目录的文件夹地址
-
-  $filesnames = scandir($hostdir);
-
-//获取也就是扫描文件夹内的文件及文件夹名存入数组 $filesnames
-
-  //print_r ($filesnames);
-
-foreach ($filesnames as $name) {
-
-//echo $name; 
-
-$url="http://www.****.com/".$name;
-
-$aurl= "<a href=\"".$url."\">".$url."</a>";
-
-echo $aurl . "<br/>";
-
-}
-
+			else{
+				//若不是文件夹 则判断文件是否是html文件
+				//echo $name;
+				if(end(explode('.', $name))=="html"){  //若是html文件 则增加a标签 完成
+					$url = $filespath.$name;
+					$aurl= "<a href=\"".$url."\">".$url."</a>";
+					echo $aurl . "<br/>";
+				}
+			}
+		}
+		return ;
+	}
 ?>
