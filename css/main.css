@@ -33,19 +33,9 @@ header{
 #link li a:hover{
 	color: #FFF;
 }
-.logo{
-	overflow: hidden;
+#clock{
+	width: 100%;
 }
-.logo canvas{
-	display: block;
-	margin: 0 auto;
-	position: relative;
-	top: 50px;
-	left: 90px;
-	width: 480px;
-	height: 480px;
-}
-
 svg{
 	display: block;
 	width: 240px;
@@ -137,15 +127,6 @@ path {
 	}
 	#link li{
 		margin: 0 5px;
-	}
-	.logo canvas{
-		display: block;
-		margin: 0 auto;
-		position: relative;
-		top: 50px;
-		left: 60px;
-		height: 300px;
-		width: 300px;
 	}
 	svg{
 		margin-top: 80px;

@@ -1,8 +1,7 @@
 *.zip
-*.png
-*.jpg
 .DS_Store
 document/*
 material/*
 src/wechat.jpg
 src/logo.svg
+project/biye/*

@@ -1,48 +1,37 @@
-var WINDOW_WIDTH = 1024;
-var WINDOW_HEIGHT = 768;
-var RADIUS = 8;
-var MARGIN_TOP = 60;
-var MARGIN_LEFT = 30;
+var WINDOW_WIDTH = document.body.clientWidth;
+var WINDOW_HEIGHT = 250;
+var MARGIN_LEFT = Math.round(WINDOW_WIDTH / 10);
+var RADIUS = WINDOW_WIDTH * 4 / 5 / 108-1;
+var MARGIN_TOP = Math.round(WINDOW_HEIGHT / 5);
 
-const endTime = new Date(2016,10,12,18,47,52);
-var curShowTimeSeconds = 0
-
-var balls = [];
-const colors = ["#33B5E5","#0099CC","#AA66CC","#9933CC","#99CC00","#669900","#FFBB33","#FF8800","#FF4444","#CC0000"]
+var balls = []; //存放需要掉落的小球
+const colors = ["#33B5E5","#0099CC","#AA66CC","#9933CC","#99CC00","#669900","#FFBB33","#FF8800","#FF4444","#CC0000"];
 
 window.onload = function(){
-
-    WINDOW_WIDTH = document.body.clientWidth
-    WINDOW_HEIGHT = document.body.clientHeight
-
-    MARGIN_LEFT = Math.round(WINDOW_WIDTH *0.22);
-    RADIUS = Math.round(WINDOW_WIDTH * 3 / 5 / 108)-1
-
-    MARGIN_TOP = Math.round(WINDOW_HEIGHT /5);
-
-    var canvas = document.getElementById('canvas');
-    var context = canvas.getContext("2d");
-
+    var canvas = document.getElementById('clock');
+    var context = canvas.getContext("2d"); //获得绘图环境
+    if (RADIUS>5) {
+        RADIUS=5;
+        MARGIN_LEFT=(WINDOW_WIDTH - (RADIUS + 1)*108) / 2;
+    }
     canvas.width = WINDOW_WIDTH;
     canvas.height = WINDOW_HEIGHT;
 
-    curShowTimeSeconds = getCurrentShowTimeSeconds()
+    curShowTimeSeconds = getCurrentShowTimeSeconds();
     setInterval(
         function(){
             render( context );
             update();
         }
         ,
-        33
+        40
     );
 }
 
 function getCurrentShowTimeSeconds() {
     var curTime = new Date();
-    var ret = endTime.getTime() - curTime.getTime();
-    ret = Math.round( ret/1000 )
-
-    return ret >= 0 ? ret : 0;
+    var result = curTime.getHours()*3600 + curTime.getMinutes()*60 + curTime.getSeconds();
+    return result ;
 }
 
 function update(){
@@ -81,10 +70,7 @@ function update(){
 
         curShowTimeSeconds = nextShowTimeSeconds;
     }
-
     updateBalls();
-
-    console.log( balls.length)
 }
 
 function updateBalls(){
@@ -102,7 +88,7 @@ function updateBalls(){
         }
         
     }
-
+    console.log(balls.length);
     var cnt = 0
     for( var i = 0 ; i < balls.length ; i ++ )
         if( balls[i].y - RADIUS < WINDOW_HEIGHT && balls[i].x -RADIUS < WINDOW_WIDTH )
@@ -162,7 +148,7 @@ function render( cxt ){
 
 function renderDigit( x , y , num , cxt ){
 
-    cxt.fillStyle = "rgb(0,102,153)";
+    cxt.fillStyle = "rgb(255,255,255)";
 
     for( var i = 0 ; i < digit[num].length ; i ++ )
         for(var j = 0 ; j < digit[num][i].length ; j ++ )
