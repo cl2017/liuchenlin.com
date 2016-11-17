@@ -13,9 +13,13 @@ window.onload = function(){
         RADIUS=5;
         MARGIN_LEFT=(WINDOW_WIDTH - (RADIUS + 1)*108) / 2;
     }
+    if(RADIUS<2){
+        RADIUS=2;
+        MARGIN_LEFT=(WINDOW_WIDTH - (RADIUS + 1)*108) / 2;
+    }
     canvas.width = WINDOW_WIDTH;
     canvas.height = WINDOW_HEIGHT;
-
+    console.log(RADIUS);
     curShowTimeSeconds = getCurrentShowTimeSeconds();
     setInterval(
         function(){
