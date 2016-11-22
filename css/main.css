@@ -33,6 +33,9 @@ header{
 #link li a:hover{
 	color: #FFF;
 }
+#clock{
+	width: 100%;
+}
 svg{
 	display: block;
 	width: 240px;
