@@ -35,7 +35,7 @@
 						if(end(explode('.', $name))=="html"){  //若是html文件 则为其增加a标签 
 							if($filespath=="./") $filespath="";
 							$url = $filespath.$name;
-							$aurl= "<a href=\"".$url."\">".$url."</a>";
+							$aurl= "<a href=\"".$url."\" target=\"_blank\" >".$url."</a>";
 							echo "<li>".$aurl."</li>";
 						}
 					}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery+Ajax+PHP弹出层异步登录</title>
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="http://www.helloweba.com/demo/css/demo.css" />
+<link rel="stylesheet" href="hwLayer.css">
+<style>#login-form{margin: 30px;}</style>
+</head>
+<body>
+<div class="container">
+
+	<div class="row main">
+		<div class="col-md-12">
+			<h2 class="top_title"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><a href="http://www.helloweba.com/view-blog-367.html">jQuery+Ajax+PHP弹出层异步登录</a></h2>
+			<div class="optlist">
+				
+				<a href="#0" class="btn btn-danger btn-lg" id="form-btn" data-show-layer="hw-layer-login" role="button">点击弹出登录表单</a>
+				
+				<div id="result"></div>
+				<a href="./index.php">index</a>
+			</div>
+			
+			<div class="hw-overlay" id="hw-layer-login">
+				<div class="hw-layer-wrap">
+					<button type="button" class="close hwLayer-close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h3 class="hw-layer-title">用户登录</h3>
+					<div class="row">
+						<form class="form-horizontal" action="login.php" method="post" id="login-form">
+							<div class="form-group">
+								<div class="input-group">
+									<div class="input-group-addon"><i class="glyphicon glyphicon-user"></i></div>
+									<input type="text" class="form-control" name="user" id="user" placeholder="请输入用户名">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="input-group">
+									<div class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></div>
+									<input type="password" class="form-control" name="password" id="password" placeholder="请输入密码">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-md-11 col-md-offset-1">
+									<button type="submit" class="btn btn-success hwLayer-ok">登录</button>
+									<span id="msg"></span>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			
+
+		</div>
+	</div>
+
+</div>
+<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="jquery.hwLayer.js"></script>
+<script>
+$(function(){
+	$('#form-btn').hwLayer({
+		width: 480,
+		tapLayer: false,
+		afterClose: function(){
+			console.log('close');
+		}
+	});
+	$(".hwLayer-ok").on('click',  function(event) {
+		event.preventDefault();
+		var user = $('#user').val();
+		var pass = $('#password').val();
+		if(user==''){
+			$('#msg').addClass('text-danger').text('用户名不能为空！');
+			return false;
+		}
+		if(pass==''){
+			$('#msg').addClass('text-danger').text('密码不能为空！');
+			return false;
+		}
+		$.ajax({
+			url: 'login.php',
+			type: 'POST',
+			dataType: 'json',
+			data: {username: user,password: pass},
+			beforeSend: function(){
+				$('#msg').addClass('text-success').text('正在登录...');
+				$(".hwLayer-ok").attr('disabled',true);
+			},
+			success: function(res){
+				if(res.code==1){ //登录成功
+					$('#result').html('欢迎您，' + res.username);
+					$('#msg').removeClass('text-danger').addClass('text-success').text('登录成功！');
+					$('#hw-layer-login').hwLayer('close');
+					$('#form-btn').hide();
+				}else{
+					$('#msg').addClass('text-danger').text('用户名或密码错误！');
+				}
+				$(".hwLayer-ok").removeAttr('disabled');
+			}
+		});
+	});
+});
+</script>
+</body>
+</html>
