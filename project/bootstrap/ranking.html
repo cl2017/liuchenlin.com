@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+		<title>用户排名</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/suoj.css">
+		<link rel="stylesheet" href="css/toastr.min.css">
+		<style type="text/css">
+		</style>
+	</head>
+
+	<body>
+		<!-- php包含公共头部 -->
+
+		<!-- 页面主体 -->
+		<div class="container">
+			<form class="form-inline" action="" method="" style="margin-bottom: 10px;">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+					<input class="form-control" type="text" placeholder="按用户名搜索" name="" value="">
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+					<input class="form-control" type="text" placeholder="按名次搜索" name="" value="">
+				</div>
+				<input type="submit" class="btn btn-default" value="搜索">
+			</form>
+	
+			<table class="table table-striped table-hover table-bordered">
+				<thead>
+					<tr>
+						<th>名次</th>
+						<th>用户名</th>
+						<th>签名</th>
+						<th>解决</th>
+						<th>提交</th>
+						<th>成功率</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- *********** -->
+					<tr>
+						<td>1</td>
+						<td><a href="#">admin</a></td>
+						<td>test</td>
+						<td>50</td>
+						<td>50</td>
+						<td>100%</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td><a href="#">葫芦娃</a></td>
+						<td>葫芦娃</td>
+						<td>50</td>
+						<td>50</td>
+						<td>100%</td>
+					</tr>
+					<!-- 按照以上 tr>td 的格式生成行内容即可 一页20~30行左右比较合适-->
+				</tbody>
+			</table>
+
+			<nav style="text-align: center">
+				<ul class="pagination">
+					<li class="disabled"><a href="#">«</a></li>
+					<!-- disabled类不能点击 -->
+					<li class="active"><a href="#">1</a></li>
+					<!-- active类表示当前页面 -->
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li><a href="#">»</a></li>
+					<!-- 在这里生成分页导航 -->
+				</ul>
+			</nav>
+		</div>
+
+		<!-- php包含底部导航 -->
+
+		<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/toastr.min.js"></script>
+		<script type="text/javascript" src="js/suoj.js"></script>
+	</body>
+</html>

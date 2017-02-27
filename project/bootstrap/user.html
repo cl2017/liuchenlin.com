@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+		<title>个人主页</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/suoj.css">
+		<link rel="stylesheet" href="css/toastr.min.css">
+		<style type="text/css">
+			.panel{
+				font-size: 16px;
+			}
+			body{
+				margin-top: 50px;
+			}
+			.glyphicon{
+				margin-right: 8px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- php包含公共头部 -->
+
+		<!-- 页面主体 -->
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col-md-4 column">
+					<div class="panel panel-primary">
+					    <div class="panel-heading"><h3>你好，admin</h3></div>
+						<div class="panel-body">
+							<p><strong>这是个人签名</strong></p>
+						</div>
+						<ul class="list-group">
+							<li class="list-group-item"><span class="glyphicon glyphicon-home"></span>学校</li>
+							<li class="list-group-item"><span class="glyphicon glyphicon-envelope"></span>邮箱</li>
+							<li class="list-group-item"><span class="glyphicon glyphicon-time"></span>注册时间：</li>
+							<li class="list-group-item"><span class="glyphicon glyphicon-time"></span>最后登录：</li>
+						</ul>
+						<div class="panel-footer">
+							<a href="#" class="btn btn-default">修改个人信息</a>
+							<a href="#" class="btn btn-default">修改密码</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 column">
+					<div class="panel panel-info">
+					    <div class="panel-heading"><h3>我的个人数据</h3></div>
+
+						<ul class="list-group">
+							<li class="list-group-item">
+								<span class="glyphicon glyphicon-open"></span>提交次数<span class="badge">13</span>
+							</li>
+							<li class="list-group-item list-group-item-success">
+								<span class="glyphicon glyphicon-ok"></span>通过次数<span class="badge">13</span>
+							</li>
+							<li class="list-group-item list-group-item-warning">
+								<span class="glyphicon glyphicon-warning-sign"></span>编译错误<span class="badge">5</span>
+							</li>
+							<li class="list-group-item list-group-item-danger">
+								<span class="glyphicon glyphicon-remove"></span>答案错误<span class="badge">5</span>
+							</li>
+							<li class="list-group-item">
+								<span class="glyphicon glyphicon-stats"></span>排名<span class="badge">1</span>
+							</li>
+							<li class="list-group-item">
+								<span class="glyphicon glyphicon-time"></span>最近提交<span class="badge">2017/2/22</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-4 column">
+					<div class="panel panel-danger">
+					    <div class="panel-heading"><h3>我参与的</h3></div>
+						<div class="list-group">
+						    <a href="##" class="list-group-item"><span class="glyphicon glyphicon-chevron-right"></span>第四届“恒生杯”程序设计大赛初赛</a>
+						    <a href="##" class="list-group-item"><span class="glyphicon glyphicon-chevron-right"></span>俄罗斯ITMO大学的算法</a>
+						    <a href="##" class="list-group-item"><span class="glyphicon glyphicon-chevron-right"></span>玩转Bootstrap</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- php包含底部导航 -->
+
+		<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/toastr.min.js"></script>
+		<script type="text/javascript" src="js/suoj.js"></script>
+	</body>
+</html>

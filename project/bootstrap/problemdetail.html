@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+		<title>SUOJ</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/suoj.css">
+		<link rel="stylesheet" href="css/toastr.min.css">
+		<style type="text/css">
+			dt{
+				font-size: 20px;
+			}
+			dd{
+				font-size: 16px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- php包含公共头部 -->
+
+		<!-- 页面主体 -->
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col-md-12 column">
+					<div class="question">
+						<h2>Financial Management</h2>
+						<p>时间限制：<span class="label label-primary">1秒</span>&nbsp;&nbsp;
+						内存限制：<span class="label label-info">128 MB</span>&nbsp;&nbsp;
+						已提交次数：<span class="badge">234</span>&nbsp;&nbsp;
+						通过次数：<span class="badge">41</span></p>
+						<a href="#" class="btn btn-default">提交</a>&nbsp;&nbsp;
+						<a href="#" class="btn btn-default">状态</a>&nbsp;&nbsp;
+						<a href="#" class="btn btn-default">讨论</a>
+					</div>
+					<dl class="dl-horizontal">
+						<dt>问题描述</dt>
+						<dd>
+							A factory produces products packed in square packets of the same height h and of the sizes 1*1, 2*2, 3*3, 4*4, 5*5, 6*6. These products are always delivered to customers in the square parcels of the same height h as the products have and of the size 6*6. Because of the expenses it is the interest of the factory as well as of the customer to minimize the number of parcels necessary to deliver the ordered products from the factory to the customer. A good program solving the problem of finding the minimal number of parcels necessary to deliver the given products according to an order would save a lot of money. You are asked to make such a program.
+						</dd>
+						<dt>输入</dt>
+						<dd>
+							The input file consists of several lines specifying orders. Each line specifies one order. Orders are described by six integers separated by one space representing successively the number of packets of individual size from the smallest size 1*1 to the biggest size 6*6. The end of the input file is indicated by the line containing six zeros.
+						</dd>
+						<dt>输出</dt>
+						<dd>
+							The output file contains one line for each line in the input file. This line contains the minimal number of parcels into which the order from the corresponding line of the input file can be packed. There is no line in the output file corresponding to the last ``null'' line of the input file.
+						</dd>
+						<dt>示例输入</dt>
+						<dd>
+							<pre>0 0 4 0 0 1 
+7 5 1 0 0 0 
+0 0 0 0 0 0</pre>
+						</dd>
+						<dt>示例输出</dt>
+						<dd>
+							<pre>2 
+1</pre>
+						</dd>
+					</dl>
+					<div class="alert alert-info alert-dismissable">
+						<h4>提示</h4>这是提示这是提示这是提示这是提示这是提示这是提示
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- php包含底部导航 -->
+
+		<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/toastr.min.js"></script>
+		<script type="text/javascript" src="js/suoj.js"></script>
+	</body>
+</html>

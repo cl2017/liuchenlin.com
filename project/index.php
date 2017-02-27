@@ -26,23 +26,22 @@
 			function scan($filespath){
 				$filesname=scandir($filespath);  //获取根目录所有文件和文件夹的名字 (数组)
 				foreach ($filesname as $name) {
-					if(is_dir($name)&&$name!="."&&$name!="..") {  //排除当前目录./ 和上级目录 ../
+					if(is_dir($filespath.$name)&&$name!="."&&$name!=".."&&$name!="biye") {  //排除当前目录./ 和上级目录 ../
 						//如果是文件夹 则进入其目录扫描
-						scan($name."/");
+						scan($filespath.$name."/");
 					}
 
 					else{
 						//若不是文件夹 则判断文件是否是html文件
-						//echo $name;
 						if(end(explode('.', $name))=="html"){  //若是html文件 则为其增加a标签 
-							if($filespath=="./") $filespath="";
-							$url = $filespath.$name;
+							$path = substr($filespath,1);
+							$url = $path.$name;
 							$aurl= "<a href=\"".$url."\" target=\"_blank\" >".$url."</a>";
 							echo "<li>".$aurl."</li>";
 						}
 					}
 				}
-				return ;
+				return;
 			}
 		?>
 	</div>

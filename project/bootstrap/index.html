@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+		<title>SUOJ</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/suoj.css">
+		<link rel="stylesheet" href="css/toastr.min.css">
+	</head>
+
+	<body>
+		<!-- php包含公共头部 -->
+		<?php echo $this->render('@app/views/site/header'); ?>
+
+		<!-- 页面主体 -->
+		<div class="container"> 
+			<div class="row clearfix">
+				<div class="col-md-12 column">
+					<div class="jumbotron">
+						<h2>欢迎来到SUOJ</h2>
+						<br>
+						<p>这里是山东财经大学在线判题系统，新版本上线，欢迎体验。</p>
+						<p>遇到任何问题请联系管理员</p>
+						<br>
+						<p><a class="btn btn-primary btn-large" href="#">开始答题</a></p>
+						<!-- 问题页链接待填充 -->
+					</div>
+				</div>
+			</div>
+			<div class="row clearfix">
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="src/contest.jpg"/>
+						<div class="caption">
+							<h3>最新赛事</h3>
+							<p>正在举行xxx比赛，快快加入ACM的大家庭吧</p>
+							<p><a class="btn btn-info" href="#">立即参与</a><a class="btn" href="#">了解详情</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="src/contest.jpg"/>
+						<div class="caption">
+							<h3>热点讨论</h3>
+							<p>test </p>
+							<p><a class="btn btn-info" href="#">立即参与</a><a class="btn" href="#">了解详情</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="src/contest.jpg"/>
+						<div class="caption">
+							<h3>通知公告</h3>
+							<p>test </p>
+							<p><a class="btn btn-info" href="#">立即参与</a><a class="btn" href="#">了解详情</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="echarts" style="width: 100%; height: 350px;"></div>
+		</div>
+
+		<!-- php包含底部导航 -->
+		<?php echo $this->render('@app/views/site/footer'); ?>
+		<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/toastr.min.js"></script>
+		<script type="text/javascript" src="js/suoj.js"></script>
+		<script type="text/javascript" src="js/echarts.min.js"></script>
+		<script type="text/javascript" src="js/echarts.js"></script>
+	</body>
+</html>

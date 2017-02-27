@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+		<title>提交代码</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/suoj.css">
+		<link rel="stylesheet" href="css/toastr.min.css">
+		<style type="text/css">
+		</style>
+	</head>
+
+	<body>
+		<!-- php包含公共头部 -->
+		
+		<!-- 页面主体 -->
+		<div class="container">
+			<form action="" method="">
+				<div class="form-group">
+					<label for="lang">请选择语言</label>
+					<select class="form-control" name="lang">
+						<option value="gcc">gcc</option>
+						<option value="g++">c++</option>
+						<option value="java">java</option>
+						<option value="python2">python2</option>
+						<option value="python3">python3</option>						 
+					</select>
+				</div>
+				<div class="form-group">
+					<label>在此输入代码：</label>
+					<textarea class="form-control" rows="15" name="code"></textarea>
+				</div>
+				<div class="form-group" style="text-align: center">
+					<input type="reset" class="btn">
+					<input type="submit" class="btn btn-primary">
+				</div>
+			</form>
+		</div>
+		<!-- php包含底部导航 -->
+
+		<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/toastr.min.js"></script>
+		<script type="text/javascript" src="js/suoj.js"></script>
+	</body>
+</html>
