@@ -17,26 +17,25 @@
 		<div class="collapse navbar-collapse navbar-responsive-collapse">
 			<ul class="nav navbar-nav">
 					<li class=""><a href="##">竞赛</a></li>
-					<li class=""><a href="##">讨论</a></li>
+					<li class=""><a href="##">问题</a></li>
 					<li class=""><a href="##">状态</a></li>
 					<li class=""><a href="##">排名</a></li>
-					<li class=""><a href="##">问题</a></li>
+					<li class=""><a href="##">讨论</a></li>
 					<li class=""><a href="##">文件</a></li>
 					<li class=""><a href="##">关于</a></li>
 					<!-- 为当前页面添加 active 类 -->
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
-				<!-- 若未登录 则显示下面这些 -->
 				<li class="dropdown" id="user-menu" style="display: none;">
 			        <a href="##" data-toggle="dropdown" class="dropdown-toggle" style="padding:5px;">
 			        	<img src="src/touxiang.jpg" class="img-circle" width="40px;">&nbsp;&nbsp;
-			        	<span id="user-name">这里面填用户名</span><span class="caret"></span>
+			        	<span id="user-name"><?= yii::$app->session['username']?></span><span class="caret"></span>
 			        </a>
 			        <ul class="dropdown-menu">
 			       		<li><a href="##">个人信息</a></li>
 			       		<li class="divider"></li>
-<!-- 					        	<li><a href="##">我的提交</a></li>
+<!-- 					    <li><a href="##">我的提交</a></li>
 			        	<li class="divider"></li>
 			        	<li><a href="##">我的排名</a></li>
 			        	<li class="divider"></li> -->
@@ -45,27 +44,6 @@
 			    </li>
 			    <li><button class="btn btn-success" type="button" id="reg-btn">注册</button></li>
 			    <li><button class="btn btn-warning" type="button" id="login-btn">登陆</button></li>
-			    <!-- ******************* -->
-
-			    <!-- 已登录 显示这些 -->
-			    <li class="dropdown" id="user-menu">
-			        <a href="##" data-toggle="dropdown" class="dropdown-toggle" style="padding:5px;">
-			        	<img src="src/touxiang.jpg" class="img-circle" width="40px;">&nbsp;&nbsp;
-			        	<span id="user-name">这里面填用户名</span><span class="caret"></span>
-			        </a>
-			        <ul class="dropdown-menu">
-			       		<li><a href="##">个人信息</a></li>
-			       		<li class="divider"></li>
-<!-- 					        	<li><a href="##">我的提交</a></li>
-			        	<li class="divider"></li>
-			        	<li><a href="##">我的排名</a></li>
-			        	<li class="divider"></li> -->
-			        	<li><button class="btn btn-info" id="logout">退出登录</button></a></li>
-			        </ul>
-			    </li>
-			    <li><button class="btn btn-success" type="button" id="reg-btn" style="display: none;">注册</button></li>
-			    <li><button class="btn btn-warning" type="button" id="login-btn" style="display: none;">登陆</button></li>
-			    <!-- **************** -->
 		    </ul>
 		</div>
 	</div>
@@ -103,9 +81,9 @@
 					</div>
 					<div class="form-group vercode">
 						<label class="control-label" for="reg-vercode">验证码：</label>
-						<input type="text" class="form-control" id="reg-vercode" placeholder="请验证码">
+						<input type="text" class="form-control" id="reg-vercode" placeholder="请输入验证码">
 					</div>
-					<img src="/biyesheji/web/index.php?r=common%2Fbuildverifycode" style="height:20px;">
+					<a href="#" class="verify"><img src="" style="height:40px;"></a>
 				</form>
 				<p id="reg-res"></p>
 			</div>
@@ -133,13 +111,13 @@
 					</div>
 					<div class="form-group psw">
 						<label class="control-label" for="login-psw">密码：</label>
-						<input type="password" class="form-control" id="login-psw" placeholder="请输入您的邮箱密码">
+						<input type="password" class="form-control" id="login-psw" placeholder="请输入您的密码">
 					</div>
-					<div class="checkbox">
-						<label>
-							<input type="checkbox" id="remeber">记住密码 
-						</label>
+					<div class="form-group vercode">
+						<label class="control-label" for="login-vercode">验证码：</label>
+						<input type="text" class="form-control" id="login-vercode" placeholder="请输入验证码">
 					</div>
+					<a href="#" class="verify"><img src="" style="height:40px;"></a>
 				</form>
 				<p id="login-res"></p>
 			</div>

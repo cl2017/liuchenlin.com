@@ -8,11 +8,9 @@
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/suoj.css">
 		<link rel="stylesheet" href="css/toastr.min.css">
+		<link rel="stylesheet" href="css/fileinput.min.css">
+		<link rel="stylesheet" href="css/theme.css">
 		<style type="text/css">
-/*				.form-inline .input-group {
-		    display: inline-table;
-		    vertical-align: middle;*/
-		}
 		</style>
 	</head>
 
@@ -100,11 +98,10 @@
 						<h4 class="modal-title">上传文件</h4>
 					</div>
 					<div class="modal-body">
-						<p>请选择要上传的文件</p>
+						<input type="file" name="File[myfile]" id="files" multiple class="file-loading">
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-						<!-- <button type="button" class="btn btn-primary" id="login-submit">确认上传</button> -->
 					</div>
 				</div>
 			</div>
@@ -114,6 +111,9 @@
 		<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/toastr.min.js"></script>
+		<script type="text/javascript" src="js/fileinput.min.js"></script>
+		<script type="text/javascript" src="js/fileinput_locale_zh.js"></script>
+		<script type="text/javascript" src="js/theme.js"></script>
 		<script type="text/javascript" src="js/suoj.js"></script>
 		<script type="text/javascript" src="js/upload.js"></script>
 	</body>

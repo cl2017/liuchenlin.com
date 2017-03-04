@@ -1,15 +1,18 @@
 //初始化页面
 $(document).ready(function () {
-
+	if($('#user-name').html()!="")
+		$("#reg-btn,#login-btn,#user-menu").toggle();
 });
 
 //注册登录按钮点击弹出
 $("#reg-btn").click(function () {
 	$("#reg").modal();
+	$(".verify :first-child").attr("src","/biyesheji/web/index.php?r=common%2Fbuildverifycode");
 	clear_modal();
 });
 $("#login-btn").click(function () {
 	$("#login").modal();
+	$(".verify :first-child").attr("src","/biyesheji/web/index.php?r=common%2Fbuildverifycode");
 	clear_modal();
 });
 //重置弹出层样式
@@ -23,7 +26,7 @@ $("#reg-submit").click(function(){
 	clear_modal();
 	$.ajax({ 
 	    type: "POST",
-		url: "../index.php?r=member/signup",
+		url: "./web/index.php?r=member/signup",
 		data: {
 			"Member[username]": $("#reg-username").val(), 
 			"Member[nickname]": $("#reg-nickname").val(),
@@ -53,10 +56,11 @@ $("#login-submit").click(function(){
 	clear_modal();
 	$.ajax({ 
 	    type: "POST",
-		url: "../index.php?r=member/login",
+		url: "./web/index.php?r=member/login",
 		data: {
 			"Member[username]": $("#login-username").val(), 
 			"Member[password]": $("#login-psw").val(),
+			"Member[verifycode]": $("#login-vercode").val(),
 			"_csrf":$("#_csrf").val()
 		},
 		dataType: "json",
@@ -76,7 +80,30 @@ $("#login-submit").click(function(){
 		},
 	});
 });
-
+//退出登录
+$("#logout").click(function(){
+	$.ajax({ 
+	    type: "GET",
+		url: "./web/index.php?r=member/logout",
+		success: function(data){
+			if (data.success == 1) {
+				$(".dropdown-toggle").dropdown();
+				$("#reg-btn,#login-btn,#user-menu").toggle();
+				toastr.success('您已退出登录！');
+			} else {
+				toastr.error('退出登录失败！错误原因：'+data.msg);
+			}
+		},
+		error: function(jqXHR){
+			toastr.error('退出登录失败！错误原因：'+jqXHR.status);
+		},
+	});
+});
+//验证码更换
+$(".verify").click(function(){
+	var verify = $(".verify :first-child").attr("src");
+	$(".verify :first-child").attr("src",verify);
+});
 // 回车触发提交
 $('#login-psw').keydown(function () {
 	if(event.keyCode == "13"){

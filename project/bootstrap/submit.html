@@ -17,23 +17,47 @@
 		
 		<!-- 页面主体 -->
 		<div class="container">
-			<form action="" method="">
-				<div class="form-group">
-					<label for="lang">请选择语言</label>
-					<select class="form-control" name="lang">
-						<option value="gcc">gcc</option>
-						<option value="g++">c++</option>
-						<option value="java">java</option>
-						<option value="python2">python2</option>
-						<option value="python3">python3</option>						 
-					</select>
+			<form action="" method="" class="form-horizontal">
+				<div class="form-group col-md-12">
+					<label for="language">请选择语言</label>
+					<select class="form-control" name="language" id="lang">
+		                <option value="">所有语言</option>
+		                <option value="0">C</option>
+		                <option value="1">C++</option>
+		                <option value="2">Pascal</option>
+		                <option value="3">Java</option>
+		                <option value="4">Ruby</option>
+		                <option value="5">Bash</option>
+		                <option value="6">Python</option>
+		                <option value="7">PHP</option>
+		                <option value="8">Perl</option>
+		                <option value="9">C#</option>
+		                <option value="10">Obj-C</option>
+		                <option value="11">FreeBasic</option>
+		                <option value="12">Schema</option>
+		                <option value="13">Clang</option>
+		                <option value="14">Clang++</option>
+		                <option value="15">Lua</option>
+		                <option value="16">JavaScript</option>
+		                <option value="17">Other Language</option>
+		            </select>
 				</div>
-				<div class="form-group">
+				<div class="form-group col-md-12">
 					<label>在此输入代码：</label>
-					<textarea class="form-control" rows="15" name="code"></textarea>
+					<textarea class="form-control" rows="10" name="code" id="code"></textarea>
+				</div>
+				<div class="form-group col-md-12">
+					<label for="" class="col-md-1">输入：</label>
+					<div class="col-md-5">
+						<textarea class="form-control" rows="5" name="" id="test-input"></textarea>
+					</div>
+					<label for="" class="col-md-1">输出：</label>
+					<div class="col-md-5">
+						<textarea class="form-control" rows="5" name="" id="test-output"></textarea>
+					</div>
 				</div>
 				<div class="form-group" style="text-align: center">
-					<input type="reset" class="btn">
+					<input type="button" class="btn btin-info" value="测试" id="test-submit">
 					<input type="submit" class="btn btn-primary">
 				</div>
 			</form>
@@ -44,5 +68,37 @@
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/toastr.min.js"></script>
 		<script type="text/javascript" src="js/suoj.js"></script>
+		<script type="text/javascript">
+			$("#test-submit").click(function(){ 
+			$.ajax({ 
+			    type: "POST",
+				url: "填地址",
+				data: {
+					"Submit[language]": $("#lang").val(), 
+					"Submit[testinput]": $("#code").val(),
+					"Submit[source]": $("#test-inpt").val(),
+					"Submit[testrun]": 1,
+					"_csrf":$("#_csrf").val()
+				},
+				dataType: "json",
+				beforeSend: function () {
+					$('#test-output').val("测试请求已提交 请等待返回结果");
+				},
+				success: function(data){
+					if (data.success == 1) {
+						$('#test-output').val(data.output);
+						toastr.success('结果返回成功！请查看输出框内容');
+					} else {
+						$('#test-output').val("");
+						toastr.error('结果返回失败！'+ data.msg);
+					}
+				},
+				error: function(jqXHR){
+					$('#test-output').val("");
+					toastr.error("发生错误！状态码：" + jqXHR.status);
+				},
+			});
+		});
+		</script>
 	</body>
 </html>
