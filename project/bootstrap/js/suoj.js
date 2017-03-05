@@ -49,7 +49,7 @@ $("#reg-submit").click(function(){
 		},
 		error: function(jqXHR){  
 		   $("#reg-res").html("发生错误！状态码：" + jqXHR.status).addClass("alert alert-danger");
-		},
+		}
 	});
 });
 $("#login-submit").click(function(){ 
@@ -77,7 +77,7 @@ $("#login-submit").click(function(){
 		},
 		error: function(jqXHR){
 			$("#login-res").html("发生错误！状态码：" + jqXHR.status).addClass("alert alert-danger");
-		},
+		}
 	});
 });
 //退出登录
@@ -96,7 +96,7 @@ $("#logout").click(function(){
 		},
 		error: function(jqXHR){
 			toastr.error('退出登录失败！错误原因：'+jqXHR.status);
-		},
+		}
 	});
 });
 //验证码更换

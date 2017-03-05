@@ -19,7 +19,7 @@
 		<div class="container">
 			<form action="" method="" class="form-horizontal">
 				<div class="form-group col-md-12">
-					<label for="language">请选择语言</label>
+					<label for="lang">请选择语言</label>
 					<select class="form-control" name="language" id="lang">
 		                <option value="">所有语言</option>
 		                <option value="0">C</option>
@@ -70,35 +70,35 @@
 		<script type="text/javascript" src="js/suoj.js"></script>
 		<script type="text/javascript">
 			$("#test-submit").click(function(){ 
-			$.ajax({ 
-			    type: "POST",
-				url: "填地址",
-				data: {
-					"Submit[language]": $("#lang").val(), 
-					"Submit[testinput]": $("#code").val(),
-					"Submit[source]": $("#test-inpt").val(),
-					"Submit[testrun]": 1,
-					"_csrf":$("#_csrf").val()
-				},
-				dataType: "json",
-				beforeSend: function () {
-					$('#test-output').val("测试请求已提交 请等待返回结果");
-				},
-				success: function(data){
-					if (data.success == 1) {
-						$('#test-output').val(data.output);
-						toastr.success('结果返回成功！请查看输出框内容');
-					} else {
+				$.ajax({
+				    type: "POST",
+					url: "test.php",
+					data: {
+						"Submit[language]": $("#lang").val(), 
+						"Submit[testinput]": $("#code").val(),
+						"Submit[source]": $("#test-input").val(),
+						"Submit[testrun]": "1",
+						"_csrf": $("#_csrf").val()
+					},
+					dataType: "json",
+					beforeSend: function () {
+						$('#test-output').val("测试请求已提交 请等待返回结果");
+					},
+					success: function(data){
+						if (data.success == 1) {
+							$('#test-output').val(data.output);
+							toastr.success('结果返回成功！请查看输出框内容');
+						} else {
+							$('#test-output').val("");
+							toastr.error('结果返回失败！'+ data.msg);
+						}
+					},
+					error: function(jqXHR){
 						$('#test-output').val("");
-						toastr.error('结果返回失败！'+ data.msg);
-					}
-				},
-				error: function(jqXHR){
-					$('#test-output').val("");
-					toastr.error("发生错误！状态码：" + jqXHR.status);
-				},
+						toastr.error("发生错误！状态码：" + jqXHR.status);
+					},
+				});
 			});
-		});
 		</script>
 	</body>
 </html>
