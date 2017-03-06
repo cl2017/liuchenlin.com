@@ -2,7 +2,7 @@ html{
 	font-size: 62.5%; /*1rem=10px*/
 }
 body{
-	background-color: #2B90E7;
+	background-color: #8888FF;
 	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 header{
@@ -47,7 +47,7 @@ svg{
 path {
   stroke-linecap: round;
   stroke-linejoin: round;
-  fill:#2B90E7;
+  fill:#8888FF;
   stroke:white;
   stroke-width:15;
 }
