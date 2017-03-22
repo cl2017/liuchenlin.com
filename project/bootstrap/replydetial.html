@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+		<title>贴子详情</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/suoj.css">
+		<link rel="stylesheet" href="css/toastr.min.css">
+	</head>
+
+	<body>
+		<!-- php包含公共头部 -->
+		<?php echo $this->render('@app/views/site/header'); ?>
+
+		<!-- 页面主体 -->
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col-md-12 column">
+					<!-- 从这里开始 -->
+					<div class="media well">
+						<!-- <p class="glyphicon glyphicon-list"></p> -->
+						<h2 class="pull-left" style="margin-top: 10px;"><span class="label label-primary">楼主</span></h2>
+						<div class="media-body">
+							<h2 style="margin-top: 10px;">我是标题</h2>
+							<blockquote>
+								发布时间：<span class="label label-success">2017/1/1</span>&nbsp;&nbsp;&nbsp;
+								作者：<span class="label label-info">admin</span>
+							</blockquote>
+							<p>
+							内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+							</p>
+						</div>
+					</div>
+					<!-- 回复内容按media内部生成即可 -->
+				</div>
+			</div>
+		</div>
+
+		<!-- php包含底部导航 -->
+		<?php echo $this->render('@app/views/site/footer'); ?>
+		<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/toastr.min.js"></script>
+		<script type="text/javascript" src="js/suoj.js"></script>
+	</body>
+</html>

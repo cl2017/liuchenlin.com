@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>cl's project</title>
 	<link href="//cdn.bootcss.com/normalize/5.0.0/normalize.min.css" rel="stylesheet">
+	<link rel="shortcut icon" href="../src/cl-icon.ico">
 	<style type="text/css">
 		.title{
 			font-size: 20px;

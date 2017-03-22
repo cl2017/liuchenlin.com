@@ -8,7 +8,15 @@
 
 $(document).ready(function () {
 
-
+    setTimeout(function() {
+                    toastr.options = {
+                        closeButton: true,
+                        progressBar: true,
+                        showMethod: 'slideDown',
+                        timeOut: 4000
+                    };
+                    toastr.info('请谨慎操作', '您已登陆SUOJ后台系统');
+                }, 300);
     // Add body-small class if window less than 768px
     if ($(this).width() < 769) {
         $('body').addClass('body-small')
@@ -111,8 +119,8 @@ $(document).ready(function () {
             $(".slimScrollBar,.slimScrollRail").remove();
             $(".slimScrollDiv").contents().unwrap();
             $('.sidebar-collapse').attr("style","");
-            $('li[class=active]').click();
-        } else{
+        }
+        else{
             $('.sidebar-collapse').slimScroll({
                 height: '100%',
                 railOpacity: 0.9

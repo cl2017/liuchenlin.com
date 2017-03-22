@@ -1,0 +1,9 @@
+.col-xs-12 > .ibox .label-success{
+	background-color: #36D958;
+}
+.col-xs-12 > .ibox .label-primary{
+	background-color: #2B90E7;
+}
+.col-xs-12 > .ibox .label-info{
+	background-color: #F6DA21;
+}

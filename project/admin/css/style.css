@@ -216,7 +216,7 @@ h5 {
   right: 6px;
   top: 12px;
 }
-.arrow {
+#side-menu .fa-chevron-down ,.arrow{
   float: right;
 }
 .fa.arrow:before {

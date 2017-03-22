@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
  
-    <title>SUOJ 后台管理</title>
+    <title>SUOJ 文件管理</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -16,6 +16,7 @@
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/suoj.css" rel="stylesheet" >
+    <link href="css/fileinput.min.css" rel="stylesheet" >
     <style type="text/css">
     </style>
 </head>
@@ -45,6 +46,7 @@
                             <li><a href=""><i class="fa fa-chevron-right"></i>老师列表</a></li>
                             <li><a href=""><i class="fa fa-chevron-right"></i>用户列表</a></li>
                             <li><a href=""><i class="fa fa-chevron-right"></i>添加用户</a></li>
+                            <li><a href=""><i class="fa fa-chevron-right"></i>封禁用户</a></li>
                         </ul>
                     </li>
                     <li>
@@ -103,9 +105,99 @@
                     </ul>
                 </nav>
             </div>
-            <!-- ***************** -->
-            <!-- 在这里插入每个页面的内容 -->
-            <!-- ***************** -->
+            <div class="wrapper wrapper-content">
+                <div class="row">
+                    <div class="ibox">
+                        <div class="ibox-title">
+                            <h5>文件列表</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <div style="margin-bottom: 10px;">
+                                <button class="btn btn-primary" id="upload-btn" style="float: left;margin-right: 15px;">上传文件</button>
+                                <form class="form-inline" action="" method="" style="float: left;">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                                        <input class="form-control" type="text" placeholder="按文件搜索" name="" value="">
+                                    </div>
+                                    <input type="submit" class="btn btn-default" value="搜索">
+                                </form>
+                            </div>
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>文件名</th>
+                                        <th>上传者</th>
+                                        <th>上传时间</th>
+                                        <th>下载次数</th>
+                                        <th>下载</th>
+                                        <th>删除</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- *********** -->
+                                    <tr>
+                                        <td>test.html</td>
+                                        <td><a href="#">admin</a></td>
+                                        <td>date</td>
+                                        <td>50</td>
+                                        <td><a href="#" class="btn btn-sm btn-default">下载</a></td>
+                                        <td><a href="#" class="btn btn-sm btn-danger">删除</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>test.html</td>
+                                        <td><a href="#">admin</a></td>
+                                        <td>date</td>
+                                        <td>50</td>
+                                        <td><a href="#" class="btn btn-sm btn-default">下载</a></td>
+                                        <td><a href="#" class="btn btn-sm btn-danger">删除</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>test.html</td>
+                                        <td><a href="#">admin</a></td>
+                                        <td>date</td>
+                                        <td>50</td>
+                                        <td><a href="#" class="btn btn-sm btn-default">下载</a></td>
+                                        <td><a href="#" class="btn btn-sm btn-danger">删除</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>test.html</td>
+                                        <td><a href="#">admin</a></td>
+                                        <td>date</td>
+                                        <td>50</td>
+                                        <td><a href="#" class="btn btn-sm btn-default">下载</a></td>
+                                        <td><a href="#" class="btn btn-sm btn-danger">删除</a></td>
+                                    </tr>
+                                    <!-- 按照以上 tr>td 的格式生成行内容即可 一页20~30行左右比较合适-->
+                                </tbody>
+                            </table>
+                            <nav style="text-align: center">
+                                <?php
+                                echo yii\widgets\LinkPager::widget(['pagination' => $pager, 'firstPageLabel' => '首页', 'lastPageLabel' => '尾页', 'nextPageLabel' => '下一页', 'prevPageLabel' => '上一页']);
+                                ?>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="upload" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">上传文件</h4>
+                        </div>
+                        <div class="modal-body">
+                            <input type="file" name="File[myfile]" id="files" multiple class="file-loading">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -118,9 +210,11 @@
     <!-- Custom and plugin javascript -->
     <script src="js/inspinia.js"></script>
     <script src="js/pace.min.js"></script>
-
+    <script type="text/javascript" src="js/fileinput.min.js"></script>
+    <script type="text/javascript" src="js/fileinput_locale_zh.js"></script>
+    <script type="text/javascript" src="js/theme.js"></script>
+    <script type="text/javascript" src="js/upload.js"></script>
     <!-- Toastr -->
     <script src="js/toastr.min.js"></script>
-
 </body>
 </html>
