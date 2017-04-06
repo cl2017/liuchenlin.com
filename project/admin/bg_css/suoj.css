@@ -7,3 +7,16 @@
 .col-xs-12 > .ibox .label-info{
 	background-color: #F6DA21;
 }
+.list-group  a{
+	margin: 0 3px;
+}
+dt,dd{
+	margin-bottom: 20px;
+}
+.question>a{
+	width: 100px;
+	margin-bottom: 30px;
+}
+.question{
+	text-align: center;
+}

@@ -6,6 +6,7 @@ var MARGIN_TOP = Math.round(WINDOW_HEIGHT / 5);
 var balls = []; //存放需要掉落的小球
 const colors = ["#33B5E5","#0099CC","#AA66CC","#9933CC","#99CC00","#669900","#FFBB33","#FF8800","#FF4444","#CC0000"];
 
+// window.onresize = size();
 window.onload = function(){
     var canvas = document.getElementById('clock');
     var context = canvas.getContext("2d"); //获得绘图环境
@@ -19,7 +20,6 @@ window.onload = function(){
     }
     canvas.width = WINDOW_WIDTH;
     canvas.height = WINDOW_HEIGHT;
-    console.log(RADIUS);
     curShowTimeSeconds = getCurrentShowTimeSeconds();
     setInterval(
         function(){

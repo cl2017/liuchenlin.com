@@ -5,3 +5,5 @@ material/*
 src/wechat.jpg
 src/logo.svg
 project/biye/*
+project/*.php
+test/*.php

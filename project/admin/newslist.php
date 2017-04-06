@@ -19,20 +19,13 @@
                             </form>
 
                             <div class="list-group">
-                                <?php
-                                foreach ($data as $data_each) {
-                                    echo '<a href="';
-                                    echo yii\helpers\Url::to(['/news/detail', 'id' => $data_each['news_id']]);
-                                    echo '" class="list-group-item"><span class="glyphicon glyphicon-chevron-right"></span>';
-                                    if ($data_each['news_status'] == 5) {
-                                        echo '[置顶]';
-                                    }
-                                    echo $data_each['news_title'];
-                                    echo '<span class="badge">';
-                                    echo date("Y-n-d H:i:s", $data_each['news_modified_time']);
-                                    echo '</span></a>';
-                                } ?>
-                                <!-- 按照以上格式生成a的链接和内容即可 -->
+                                <span href="/index.php?r=news%2Fdetail&amp;id=1" class="list-group-item">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                    <a href="#">这是标题</a>
+                                    <a href="#" style="float: right;">编辑</a>
+                                    <a href="#" style="float: right;">删除</a>
+                                    <span class="badge">2017-3-23 17:02:12</span>
+                                </span>
                             </div>
                             <nav style="text-align: left">
                                 <ul class="pagination">

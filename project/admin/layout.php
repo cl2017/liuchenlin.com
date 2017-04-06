@@ -7,15 +7,15 @@
  
     <title>SUOJ 后台管理</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="bg_css/bootstrap.min.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
 
     <!-- Toastr style -->
-    <link href="css/toastr.min.css" rel="stylesheet">
+    <link href="bg_css/toastr.min.css" rel="stylesheet">
 
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/suoj.css" rel="stylesheet" >
+    <link href="bg_css/animate.css" rel="stylesheet">
+    <link href="bg_css/style.css" rel="stylesheet">
+    <link href="bg_css/suoj.css" rel="stylesheet" >
     <style type="text/css">
     </style>
 </head>
@@ -110,17 +110,17 @@
     </div>
 
     <!-- Mainly scripts -->
-    <script src="js/jquery-2.1.1.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.metisMenu.js"></script>
-    <script src="js/jquery.slimscroll.min.js"></script>
+    <script src="bg_js/jquery-2.1.1.js"></script>
+    <script src="bg_js/bootstrap.min.js"></script>
+    <script src="bg_js/jquery.metisMenu.js"></script>
+    <script src="bg_js/jquery.slimscroll.min.js"></script>
 
     <!-- Custom and plugin javascript -->
-    <script src="js/inspinia.js"></script>
-    <script src="js/pace.min.js"></script>
+    <script src="bg_js/inspinia.js"></script>
+    <script src="bg_js/pace.min.js"></script>
 
     <!-- Toastr -->
-    <script src="js/toastr.min.js"></script>
+    <script src="bg_js/toastr.min.js"></script>
 
 </body>
 </html>

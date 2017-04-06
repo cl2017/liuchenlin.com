@@ -27,13 +27,12 @@
 			<a href="http://liuchenlin.com">cl's index</a>
 		</div>
 		<div id="link" class="animated bounceInDown">
-			<li><a href="http://blog.liuchenlin.com" target="_blank">Blog</a></li>
-			<li><a href="http://project.liuchenlin.com" target="_blank">Project</a></li>
-			<li><a href="http://github.com/cl2017" target="_blank">GitHub</a></li>
+			<li><a href="//blog.liuchenlin.com" target="_blank">Blog</a></li>
+			<li><a href="//project.liuchenlin.com" target="_blank">Project</a></li>
+			<li><a href="//github.com/cl2017" target="_blank">GitHub</a></li>
 			<li><a href="src/wechat.jpg" target="_blank">Wechat</a></li>
 			<li><a href="mailto:me@liuchenlin.com">Email</a></li>
 		</div>
-
 	</header>
 
 	<svg  xmlns="http://www.w3.org/2000/svg" viewbox="0 0 910 650" baseProfile="full">
@@ -76,10 +75,23 @@
 	    </g>
 	</svg>
 
-	<canvas id="clock"></canvas>
+	<canvas id="clock" height="250"></canvas>
 
-	<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+	<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/digit.js"></script>
     <script src="js/countdown.js"></script>
+    <script src="js/jquery.particleground.min.js"></script>
+    <script>
+    	$(document).ready(function() {
+		  $('body').particleground({
+		    dotColor: '#7777ff',
+		    lineColor: '#7777ff',
+		    density: '25000',
+		    proximity: 150,
+		    particleRadius: 15,
+		    lineWidth: 1
+		  });
+		});
+    </script>
 </body>
 </html>
